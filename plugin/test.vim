@@ -8,6 +8,8 @@ python << EOF
 import vim, urllib2
 import json
 
+# TODO: use IncSearch as the highlighting group (if possible)
+
 TIMEOUT = 20
 URL = "http://reddit.com/.json"
 
@@ -32,11 +34,15 @@ try:
         url = post_data.get("url").encode("utf-8")
 
         vim.current.buffer.append("    %s [%s]"%(title, url,))
-        vim.current.buffer[0] = 80*"-"
+    vim.current.buffer[-1] = 80*"-"
 except Exception, e:
     print e
 
 EOF
 endfunction
 
+exe 'pyfile ../autoload/test.py'
+
 command! -nargs=0 Reddit call Reddit()
+""nmap <buffer> ' :call Reddit()
+command! -nargs=0 DrawFace call test#DrawFace()
