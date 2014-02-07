@@ -2,5 +2,6 @@ import vim
 
 
 def drr():
-    print(vim.command("marks"))
-    print(":)")
+    marks = vim.eval("marks").split()
+    print(marks[0])
+    print(":;)")
