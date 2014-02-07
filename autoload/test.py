@@ -1,5 +1,5 @@
 import vim
 
 
-def drawFace():
+def drr():
     print(":)")

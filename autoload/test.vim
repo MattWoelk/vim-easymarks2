@@ -1,4 +1,4 @@
-function DrawFace()
+function! test#DrawFace()
     exe 'pyfile ./test.py'
-    python drawFace()
+    python drr()
 endfunction
