@@ -7,9 +7,7 @@ possible_marks = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 def drr():
     marks = get_mark_locations()
-    #marks = vim.command("marks").split()
-    print(marks['a'])
-    print(";)")
+    print(marks)
 
 
 def get_mark_locations():
@@ -18,5 +16,5 @@ def get_mark_locations():
         mark_location = vim.current.buffer.mark(mark)
         if mark_location:
             mark_location = {'row': mark_location[0], 'col': mark_location[1]}
-        result[mark] = mark_location
+            result[mark] = mark_location
     return result
