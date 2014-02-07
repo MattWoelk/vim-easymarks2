@@ -45,4 +45,7 @@ exe 'pyfile ../autoload/test.py'
 
 command! -nargs=0 Reddit call Reddit()
 ""nmap <buffer> ' :call Reddit()
-command! -nargs=0 DrawFace call test#DrawFace()
+""command! -nargs=0 DrawFace call test#DrawFace()
+nnoremap <leader>o :call DrawFace()
+
+
