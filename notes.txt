@@ -24,13 +24,26 @@ STEPS:
 
 - Insert '<easymarks2>' and '</easymarks2>' around each mark
 
-- Hide them:
+- Hide them: (read in these values first, so we can revert back to them??)
+:set conceallevel=2
+:set concealcursor=nc
 :syntax match Todo /<\/*easymarks2>/ conceal
+
+- change mark chars to be the name of the mark
+
+- highlight the marks, so that they're visually distinct
+:highlight easymarksmark ctermbg=red guibg=darkred
+:match easymarksmark /<easymarks2>.*<\/easymarks2>/
 
 - Allow the user to either hit escape, or go to a mark
 
+- Disable highlighting of the marks
+:call clearmatches()
+
 - Disable the conceal highlighting
 :syntax clear Todo
+
+- change mark chars back to how they were
 
 
 
