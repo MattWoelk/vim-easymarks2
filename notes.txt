@@ -5,6 +5,9 @@ To reload the script, run:
 For highlighting, this may help:
 http://stackoverflow.com/a/11089355/947305
 
+highlight UnwantedTab ctermbg=red guibg=darkred
+match UnwantedTab /\t/
+
 Surround marks with hidden elements so that the highlighting code is simple:
 :help conceal
 
@@ -14,6 +17,23 @@ Surround marks with hidden elements so that the highlighting code is simple:
 use *' '* as the conceal items, like in vim help files
 
 :syntax match Todo /bar/ conceal
+
+
+
+STEPS:
+
+- Insert '<easymarks2>' and '</easymarks2>' around each mark
+
+- Hide them:
+:syntax match Todo /<\/*easymarks2>/ conceal
+
+- Allow the user to either hit escape, or go to a mark
+
+- Disable the conceal highlighting
+:syntax clear Todo
+
+
+
 
 
 So far the commands in the script were exeljcuted by Vim directly.  The
