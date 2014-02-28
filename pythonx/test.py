@@ -6,11 +6,14 @@ possible_marks = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 
 def drr():
-    marks = get_mark_locations()
-    print(marks)
+    #marks = get_mark_locations()
+    #print(marks)
+    print(vim.vars)
+    highlight_marks()
 
 
 def get_mark_locations():
+    """ Output format: {'a': {'col': 0, 'row': 4}, etc.}"""
     result = {}
     for mark in possible_marks:
         mark_location = vim.current.buffer.mark(mark)
@@ -18,3 +21,7 @@ def get_mark_locations():
             mark_location = {'row': mark_location[0], 'col': mark_location[1]}
             result[mark] = mark_location
     return result
+
+
+def highlight_marks():
+    print("highlighting")
