@@ -13,6 +13,7 @@ Surround marks with hidden elements so that the highlighting code is simple:
 
 use *' '* as the conceal items, like in vim help files
 
+:syntax match Todo /bar/ conceal
 
 
 So far the commands in the script were exeljcuted by Vim directly.  The
